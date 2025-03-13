@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Halaman Beranda</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name=""author content="John Doe">
+    <meta name="nim" content="12345">
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        header {
+            background-color: #666;
+            padding: 30px;
+            text-align: center;
+            font-size: 35px;
+            color: white;
+        }
+        nav {
+            float: left;
+            width: 30%;
+            height: 300px;
+            background: #ccc;
+            padding: 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        article {
+            float: left;
+            padding: 20px;
+            width: 70%;
+            background-color: #f1f1f1;
+            height: 300px;
+        }
+        section::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        footer {
+            background-color: #777;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+        @media (max-width: 600px) {
+            nav, article {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <h2>Judul Website</h2>
+    </header>
+
+    <section>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gambar.html">Gambar</a></li>
+                <li><a href="event.html">Event</a></li>
+                <li><a href="audio.html">Audio</a></li>
+                <li><a href="video.html">Video</a></li>
+                <li><a href="svg.html">SVG</a></li>
+                <li><a href="canvas.html">Canvas</a></li>
+            </ul>
+        </nav>
+
+        <article>
+            <h1>Judul Artikel</h1>
+            <p>Halaman ini adalah contoh sederhana struktur HTML yang terdiri dari header, navigasi, artikel, dan footer. Setiap bagian memiliki peran penting dalam menyusun tampilan dan informasi dalam sebuah halaman web.</p>
+            <p>Kesimpulannya, dengan memahami struktur dasar HTML, kita dapat membangun halaman web yang terstruktur dengan baik. Halaman ini dapat dikembangkan lebih lanjut dengan menambahkan elemen lain seperti CSS dan JavaScript untuk meningkatkan tampilan dan interaktivitas.</p>
+        </article>
+    </section>
+
+    <footer>
+        <p>Footer</p>
+    </footer>
+    
+</body>
+</html>

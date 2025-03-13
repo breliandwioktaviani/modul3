@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <title>Halaman Beranda</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="John Doe">
+    <meta name="nim" content="12345">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header {
+            background-color: #666;
+            padding: 30px;
+            text-align: center;
+            font-size: 35px;
+            color: white;
+        }
+
+        nav {
+            float: left;
+            width: 30%;
+            height: 300px;
+            background: #ccc;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        article {
+            float: left;
+            padding: 20px;
+            width: 70%;
+            background-color: #f1f1f1;
+            height: 460px;
+        }
+
+        section::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        footer {
+            background-color: #777;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            nav,
+            article {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h2>Judul Website</h2>
+    </header>
+
+    <section>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gambar.html">Gambar</a></li>
+                <li><a href="event.html">Event</a></li>
+                <li><a href="audio.html">Audio</a></li>
+                <li><a href="video.html">Video</a></li>
+                <li><a href="svg.html">SVG</a></li>
+                <li><a href="canvas.html">Canvas</a></li>
+            </ul>
+        </nav>
+
+        <article>
+            <h1>Forum Penjadwal Pertemuan</h1>
+            <fieldset>
+                <legend>Informasi Pribadi</legend>
+                <table style="padding: 3px;">
+                    <tr>
+                        <td><label for="nama">Nama</label></td>
+                        <td><input type="text" id="nama" placeholder="Masukkan nama Anda"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="telepon">No. Telepon</label></td>
+                        <td><input type="tel" id="telepon" pattern="[0-9]{10,13}" placeholder="Masukkan nomor telepon"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Alamat Email</label></td>
+                        <td><input type="email" id="email" placeholder="contoh@email.com"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="ttl">Tanggal Lahir</label></td>
+                        <td><input type="date" id="ttl" min="1987-01-01" max="1993-01-01"></td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <fieldset>
+                <legend>Permintaan Pertemuan</legend>
+                <table>
+                    <tr>
+                        <td><label for="tujuan">Tujuan Pertemuan</label></td>
+                        <td><input type="text" id="tujuan" placeholder="Masukkan tujuan pertemuan"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="kepentingan">Tingkat Kepentingan Pertemuan</label></td>
+                        <td>
+                            <input type="range" id="kepentingan" min="0" max="10" step="1" value="5" oninput="kepentinganValue.value = kepentingan.value">
+                            <output id="kepentinganValue">5</output>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="tanggal">Tanggal</label></td>
+                        <td><input type="date" id="tanggal"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="waktu">Waktu</label></td>
+                        <td>
+                            <input type="time" id="waktu" min="17:00" max="21:00" value="17:00" oninput="waktuValue.textContent = waktu.value">
+                            <output id="waktuValue">17:00</output>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <button type="submit">Submit</button>
+        </article>
+    </section>
+
+    <footer>
+        <p>Brelian Dwi Oktaviani_243307071</p>
+    </footer>
+
+    <script>
+        document.getElementById("waktu").addEventListener("input", function () {
+            let waktu = this.value;
+            let minTime = "17:00";
+            let maxTime = "21:00";
+
+            if (waktu < minTime) {
+                this.value = minTime;
+            } else if (waktu > maxTime) {
+                this.value = maxTime;
+            }
+            document.getElementById("waktuValue").textContent = this.value;
+        });
+    </script>
+
+</body>
+
+</html>
